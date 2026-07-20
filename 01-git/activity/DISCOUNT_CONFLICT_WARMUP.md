@@ -1,41 +1,15 @@
-# 5-Minute Merge Conflict Warm-Up: `DISCOUNT_PERCENT`
+# Merge Conflict Warm-Up (5 minutes)
 
-The simplest possible real conflict: one Python variable, two values,
-one merge. Good as a warm-up before a bigger activity, or as a live demo.
+Two teammates changed the **same line** to different values, so Git couldn't
+pick a winner. The file already has the conflict in it. Your job: clean it up.
 
-## Setup
-
-```bash
-bash setup.sh
-cd discount-config
-```
-
-This creates `config.py` on `main` with one line:
-
-```python
-DISCOUNT_PERCENT = 10
-```
-
-...and two branches that each changed it differently:
-- `feature/dev-a` → `DISCOUNT_PERCENT = 15` ("bump for spring sale")
-- `feature/dev-b` → `DISCOUNT_PERCENT = 20` ("bump for clearance event")
-
-## Run it (about 2 minutes)
-
-```bash
-git checkout feature/dev-a
-git merge feature/dev-b
-```
-
-You'll see:
+## 1. Open the file
 
 ```
-Auto-merging config.py
-CONFLICT (content): Merge conflict in config.py
-Automatic merge failed; fix conflicts and then commit the result.
+discount-config/config.py
 ```
 
-Open `config.py`:
+It looks like this:
 
 ```python
 <<<<<<< HEAD
@@ -45,37 +19,30 @@ DISCOUNT_PERCENT = 20
 >>>>>>> feature/dev-b
 ```
 
-## Resolve it
+## 2. Edit the number
 
-Decide on a final value (talk to your "teammate," or just pick one — the
-point is the mechanics, not which number wins), delete the `<<<<<<<`,
-`=======`, and `>>>>>>>` lines, leaving one clean line:
+Delete the three marker lines (`<<<<<<<`, `=======`, `>>>>>>>`) **and** one of
+the numbers. Pick the value you want and leave just one clean line:
 
 ```python
 DISCOUNT_PERCENT = 20
 ```
 
-Then:
+Save the file.
+
+## 3. Commit your fix
 
 ```bash
-git add config.py
-git commit
+git add discount-config/config.py
+git commit -m "Resolve discount conflict"
 ```
 
-Confirm it worked:
+Done.
 
-```bash
-git status        # should be clean
-cat config.py      # should show one line, no markers
-git log --oneline --graph
-```
+---
 
-## Talking points (30 seconds each)
-
-- Git couldn't guess which number you wanted — that's *why* it's a
-  conflict rather than an error.
-- The three-line result (`<<<<<<<` / `=======` / `>>>>>>>`) always means
-  "here's your version, here's theirs, you decide."
-- In real life this would be a Slack message to Dev A or Dev B, not a
-  guess — the code alone doesn't tell you which discount is actually
-  correct for the business.
+**Why it happened:** both branches edited the same line, so Git can't guess
+which number is right — it hands the decision to you. The `<<<<<<<` /
+`=======` / `>>>>>>>` block always means "your version / their version — you
+choose." In real life you'd ask the teammate which discount is actually
+correct, not just pick one.
