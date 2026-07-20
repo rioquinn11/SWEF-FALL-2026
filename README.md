@@ -54,7 +54,7 @@ Our commitment is not just about teaching the subject matter but also ensuring y
 3. Do the homework and submit it by the following session, just like everyone else, unless you’ve spoken to the Software Engineering Foundations Committee Members about an alternate plan to accommodate your situation.
 <hr>
 
-**In-Class Participation**. Interact with your fellow classmates. Ask questions. Have fun with the material presented in class. We would love to hear your voice!  Consulting Foundations is an experience for you and we’ll need your help making it amazing.
+**In-Class Participation**. Interact with your fellow classmates. Ask questions. Have fun with the material presented in class. We would love to hear your voice!  Software Engineering Foundations is an experience for you and we’ll need your help making it amazing.
 
 > Please notify the Software Engineering Foundation Committee Members in advance if you predict that you will not be able to finish a session’s homework. If you do not notify us that you will not be able to finish a session’s homework or if you develop a pattern of missing out from homework, we will set up a 1:1 to make sure you are getting all the help you need to have a successful time at Software Engineering Foundations!
 
