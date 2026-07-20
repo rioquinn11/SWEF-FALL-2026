@@ -1,3 +1,0 @@
-DISCOUNT_PERCENT = 69
-
-
